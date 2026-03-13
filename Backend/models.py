@@ -69,6 +69,7 @@ class Assessment(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    skill_focus = Column(String, nullable=False, default="overall")
     score = Column(Float, nullable=False)
     missing_skills = Column(Text, nullable=False)
     strong_skills = Column(Text, nullable=False)
@@ -99,6 +100,7 @@ class PersonalizedPlan(Base):
     assessment_id = Column(Integer, ForeignKey("assessments.id"), nullable=False)
     recommended_courses = Column(Text, nullable=False)
     learning_areas = Column(Text, nullable=False)
+    roadmap = Column(Text, nullable=False, default="[]")
     report = Column(Text, nullable=False)
 
     assessment = relationship("Assessment", back_populates="plan")

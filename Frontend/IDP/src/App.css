@@ -126,6 +126,61 @@
   }
 }
 
+@layer components {
+  .roadmap-grid {
+    display: grid;
+    gap: 28px;
+  }
+
+  .roadmap-node {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .roadmap-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #7c4dff, #2f7cff);
+    color: #0b1222;
+    font-weight: 700;
+  }
+
+  .roadmap-card {
+    @apply rounded-2xl border border-idp-border bg-white/5 p-4;
+  }
+
+  .roadmap-connector {
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    width: 2px;
+    height: 28px;
+    background: linear-gradient(180deg, #7c4dff, #2f7cff);
+  }
+}
+
+@media (max-width: 640px) {
+  .idp-page {
+    padding-left: 12px;
+    padding-right: 12px;
+    align-items: flex-start;
+  }
+  .idp-card, .idp-card-solid {
+    padding: 16px;
+    width: 100%;
+  }
+  .idp-secondary-btn, .idp-primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @keyframes floatUp {
   from {
     opacity: 0;

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: idp-backend
+    env: python
+    rootDir: Backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./idp.db
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-1.5-flash
+      - key: CORS_ORIGINS
+        value: "https://idp-frontend.onrender.com,https://idp-frontend.vercel.app,http://localhost:5173"

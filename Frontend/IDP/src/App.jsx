@@ -4,6 +4,7 @@ import Assessment from './components/Assessment'
 import AssessmentHistory from './components/AssessmentHistory'
 import Dashboard from './components/Dashboard'
 import LandingPage from './components/LandingPage'
+import LearningPath from './components/LearningPath'
 import Login from './components/Login'
 import NavBar from './components/NavBar'
 import Register from './components/Register'
@@ -41,6 +42,8 @@ function AppContent() {
         <Route path="/assessment" element={<ProtectedRoute><Assessment /></ProtectedRoute>} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/history" element={<ProtectedRoute><AssessmentHistory /></ProtectedRoute>} />
+        <Route path="/assessments" element={<ProtectedRoute><AssessmentHistory /></ProtectedRoute>} />
+        <Route path="/learning-path" element={<ProtectedRoute><LearningPath /></ProtectedRoute>} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
