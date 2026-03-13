@@ -13,7 +13,7 @@ from user import router as user_router
 
 
 def parse_cors_origins() -> list[str]:
-    raw = os.getenv("CORS_ORIGINS", "https://idp-lovat.vercel.app","http://localhost:5173,http://localhost:3000")
+    raw = os.getenv("CORS_ORIGINS", "https://idp-lovat.vercel.app","http://localhost:5173" ,"http://localhost:3000")
     return [origin.strip() for origin in raw.split(",") if origin.strip()]
 
 
